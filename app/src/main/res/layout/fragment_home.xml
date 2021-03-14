@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            app:layout_scrollFlags="enterAlways|scroll"
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/autour_one"
+                android:text="GoGoDag"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/autour_one"
+                android:text="Forward to the"
+                android:textColor="#303030"
+                android:textSize="13sp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/autour_one"
+                android:text=" unknown"
+                android:textColor="#FF8E91"
+                android:textSize="13sp"
+                android:layout_toEndOf="@id/textView2"
+                android:layout_below="@id/textView" />
+
+            <Button
+                android:id="@+id/search_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_baseline_search_24"
+                android:backgroundTint="#7A7A7A"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/textView" />
+
+            <LinearLayout
+                android:layout_marginTop="6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/textView3">
+
+                <Button
+                    android:id="@+id/button_hotel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/hotel_icon_bar" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/fast_food_icon" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/plane_icon"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/desk_icon"/>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#D1D0D0"
+                android:layout_below="@+id/linearLayout"/>
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/viewPager"/>
+
+        <com.jem.fliptabs.FlipTab
+            android:layout_marginTop="10dp"
+            android:background="@drawable/flip_tab"
+            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_gravity="center_horizontal"
+            app:leftTabText="Best places"
+            app:rightTabText="See all"
+            app:startingTab="left"
+            app:removeDefaultPadding="true"
+            app:overallColor="#FF8E91"
+            app:borderWidth="2dp"
+            app:flipAnimationDuration="400"
+            app:wobbleReturnAnimationDuration="200"
+            app:wobbleAngle="3"
+            android:id="@+id/flipTab"/>
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
