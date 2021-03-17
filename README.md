@@ -1,5 +1,5 @@
 # GoGoDag - Travel App
-
+ 
 ## It was decided to rewrite this application to flutter
 
 ### Functions:
